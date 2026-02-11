@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		}
+	],
+	"settings": {
+		"java.debug.settings.onBuildFailureProceed": true,
+		"cSpell.words": [
+			"Haettenschweiler"
+		],
+		"files.associations": {
+			"*.c": "c",
+			"text'": "cpp"
+		}
+	}
+}

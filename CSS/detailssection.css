@@ -1,0 +1,225 @@
+/* Base and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --bg-color: rgba(0, 0, 0, 0.9);
+    --card-bg: rgba(217, 217, 217, 0.13);
+    --card-bg-hover: rgba(217, 217, 217, 0.18);
+    --accent-color: #f8bd00;
+    --accent-color-light: rgba(248, 189, 0, 0.2);
+    --text-color: #fff;
+    --text-secondary: #cbcbcb;
+    --text-muted: #8a8a8a;
+    --border-color: rgba(255, 255, 255, 0.29);
+    --header-bg: rgba(217, 217, 217, 0.14);
+    --transition: all 0.3s ease;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    /* 4px */
+    --space-sm: 0.5rem;
+    /* 8px */
+    --space-md: 1rem;
+    /* 16px */
+    --space-lg: 1.5rem;
+    /* 24px */
+    --space-xl: 2rem;
+    /* 32px */
+    --space-xxl: 3rem;
+    /* 48px */
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 19px;
+}
+
+/* Typography */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Akshar', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 700;
+}
+
+/* Details Page Specific Styles */
+.details-section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.content-wrapper {
+    flex: 1;
+    padding: 5vh 5vw;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-message {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 3vh;
+    line-height: 1.2;
+}
+
+.skills-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: 2vh;
+    flex-wrap: wrap;
+}
+
+.skills-title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    color: var(--text-color);
+}
+
+.skill-tag {
+    background-color: var(--accent-color-light);
+    color: var(--accent-color);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+}
+
+.add-skill {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.add-skill:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.skills-box {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: clamp(var(--space-md), 3vw, var(--space-lg));
+    border: 1px solid transparent;
+    transition: var(--transition);
+    margin-bottom: 2vh;
+    width: 100%;
+}
+
+.skills-box:hover {
+    border-color: var(--accent-color);
+    background-color: var(--card-bg-hover);
+}
+
+.skills-box h3 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: var(--space-sm);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    border: none;
+    margin: var(--space-sm) 0;
+}
+
+.skill-item {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+}
+
+.page-footer {
+    background-color: var(--header-bg);
+    padding: clamp(var(--space-md), 2vh, var(--space-lg)) clamp(var(--space-lg), 5vw, var(--space-xxl));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+}
+
+.brand-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.next-button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: var(--space-sm) clamp(var(--space-lg), 3vw, var(--space-xl));
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.next-button:hover {
+    background-color: #daa900;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .next-button {
+        padding: var(--space-xs) var(--space-md);
+        font-size: 0.9rem;
+    }
+}

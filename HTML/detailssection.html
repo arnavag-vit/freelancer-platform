@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkLancer - Details Section</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/detailssection.css">
+</head>
+
+<body>
+    <main class="details-section">
+        <div class="container">
+            <img src="../Assets/Images/common_backround_image.svg"
+                alt="Background" class="background-image" />
+            <section class="content-wrapper">
+                <h1 class="welcome-message">
+                    Welcome Rajit!!
+                    <br />
+                    We are glad to have you here
+                    <br />
+                    <br />
+                    Give us a few details about you to get you Started
+                </h1>
+                <div class="skills-container">
+                    <h2 class="skills-title">Skills</h2>
+                    
+                    <button class="add-skill">+ADD</button>
+                </div>
+                <div class="skills-box">
+                    <h3>UI/UX</h3>
+                    <hr class="divider" />
+                    <p class="skill-item">HTML/CSS</p>
+                </div>
+            </section>
+            <footer class="page-footer">
+                <h2 class="brand-title">LinkLancer</h2>
+                <a href="../HTML/firstpost.html"><button class="next-button">Next</button></a>
+            </footer>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const addSkillBtn = document.querySelector(".add-skill");
+          const skillsBox = document.querySelector(".skills-box");
+      
+          addSkillBtn.addEventListener("click", () => {
+            const newSkill = prompt("Enter a new skill:");
+      
+            if (newSkill && newSkill.trim() !== "") {
+              const skillElement = document.createElement("p");
+              skillElement.className = "skill-item";
+              skillElement.textContent = newSkill.trim();
+              skillsBox.appendChild(skillElement);
+            }
+          });
+        });
+      </script>
+      
+</body>
+
+</html>

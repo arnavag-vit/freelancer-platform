@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkLancer - Login</title>
+  <link rel="stylesheet" href="../CSS/loginpage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Akshar:wght@500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main class="login-page">
+    <div class="background-image"></div> <!-- Background div added here -->
+    <div class="page-container">
+      <div class="content-wrapper">
+        <header class="brand-header">
+          <h1 class="brand-name">LinkLancer</h1>
+        </header>
+        <img src="../Assets/Images/common_backround_image.svg" alt="Background" class="background-image" />
+        <section class="login-section">
+          <h2 class="welcome-message">
+            It's great having you back.<br>
+            Let's start working!
+          </h2>
+
+          <form class="login-form" action="#" method="post">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder="Enter your username" required
+                autocomplete="username">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required
+                autocomplete="current-password">
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="login-button">Log in</button>
+              <a href="homepage_org.html" class="forgot-password">Forgot password?</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.querySelector('.login-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent actual form submission
+  
+      const username = document.getElementById('username').value.trim().toLowerCase();
+  
+      if (username === 'free') {
+        window.location.href = 'homepage.html';
+      } else if (username === 'org') {
+        window.location.href = 'homepage_org.html';
+      } else {
+        alert('Invalid username. Use "free" or "org" for demo.');
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

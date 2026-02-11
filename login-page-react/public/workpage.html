@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkLancer - Find & Manage Freelance Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/workpage.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-group">
+                <div class="logo-container">
+                    <h1 class="logo-text">LinkLancer</h1>
+                </div>
+                <a href="../HTML/homepage.html" class="nav-link">Home</a>
+            </div>
+            <div class="nav-group">
+                <img src="../Assets/Images/homepage_org_img2.svg" alt="Work icon" class="nav-icon" />
+                <a href="../HTML/workpage.html" class="nav-link nav-link-active">Work</a>
+            </div>
+            <div class="nav-group">
+                <img src="../Assets/Images/homepage_org_img3.svg" alt="Chat icon" class="nav-icon-chat" />
+                <a href="../HTML/messaging_interface.html" class="nav-link">Chat</a>
+            </div>
+        </div>
+        <a href="../HTML/detailssection.html"><img src="../Assets/Images/john_doe.png" alt="User profile"
+            class="nav-profile-img" /></a>
+    </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Ongoing Work Section -->
+            <section class="ongoing-work" aria-label="Ongoing work">
+                <div class="ongoing-work-container">
+                    <h2 class="section-title">Ongoing Work</h2>
+                    <div class="work-filter">
+                        <label for="work-status" class="filter-label">Filter by Status:</label>
+                        <select id="work-status" class="status-dropdown">
+                            <option value="all">All</option>
+                            <option value="revision">Revision</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <article class="work-item" data-status="revision">
+                        <h3 class="freelancer-name">Business 1</h3>
+                        <p class="work-details">
+                            Logo designing and Custom templates.<br>
+                            Status: <span class="status-text">Revision</span><br>
+                            Due by: 22 March 2025
+                        </p>
+                        <div class="work-actions">
+                            <button class="action-btn message-btn" aria-label="Message Business 1">Message</button>
+                            <button class="action-btn update-btn" aria-label="Update status for Business 1">Update Status</button>
+                        </div>
+                        <hr class="divider">
+                    </article>
+                    
+                    <article class="work-item" data-status="in-progress">
+                        <h3 class="freelancer-name">Business 2</h3>
+                        <p class="work-details">
+                            UI/UX design.<br>
+                            Status: <span class="status-text">In Progress</span><br>
+                            Due by: 22 March 2025
+                        </p>
+                        <div class="work-actions">
+                            <button class="action-btn message-btn" aria-label="Message Business 2">Message</button>
+                            <button class="action-btn update-btn" aria-label="Update status for Business 2">Update Status</button>
+                        </div>
+                        <hr class="divider">
+                    </article>
+                </div>
+            </section>
+
+            <!-- Freelance Work Section -->
+            <section class="freelance-listings" aria-label="Freelance listings">
+                <div class="listings-container">
+                    <h2 class="listings-title">Top freelance work for you</h2>
+                    <p class="listings-subtitle">Based on your profile, preferences, and skills</p>
+
+                    <form class="search-filters" action="#" method="GET">
+                        <input type="text" class="search-box" placeholder="Search for projects or skills..." aria-label="Search projects or skills">
+                        <button type="button" class="filters-button" aria-label="Open filters">Filters</button>
+                        <div class="filters-modal" hidden>
+                            <label><input type="checkbox" name="rating" value="4+"> Rating 4+</label>
+                            <label><input type="checkbox" name="budget" value="100-500"> Budget $100-$500</label>
+                            <button type="button" class="apply-filters" aria-label="Apply filters">Apply</button>
+                        </div>
+                    </form>
+
+                    <div class="listings-grid">
+                        <article class="job-card" data-rating="4.5" data-budget="1000">
+                            <div class="job-image"><img class="job-image-src" src="../Assets/Images/ux-ui-design-icon-outline-illustration-vector.jpg" alt="UI/UX Image"/></div>
+                            <div class="job-details">
+                                <h3 class="job-title">UI/UX development and custom Templates</h3>
+                                <p class="job-stats">
+                                    Due by: 22 March 2025<br>
+                                    Project Price: $1000 (50% upfront, 50% on completion)
+                                </p>
+                                <button class="hire-btn" aria-label="Hire UI/UX developer">Hire Now</button>
+                            </div>
+                        </article>
+                        <hr class="listing-divider">
+
+                        <article class="job-card" data-rating="4.6" data-budget="1500">
+                            <div class="job-image"><img class="job-image-src" src="../Assets/Images/00_Hero-21.png" alt="UI/UX Image"/></div>
+                            <div class="job-details">
+                                <h3 class="job-title">Mobile App Interface Design</h3>
+                                <p class="job-stats">
+                                    Due by: 28 March 2025<br>
+                                    Project Price: $1500 (40% upfront, 60% on completion)
+                                </p>
+                                <button class="hire-btn" aria-label="Hire mobile app designer">Hire Now</button>
+                            </div>
+                        </article>
+                        <hr class="listing-divider">
+
+                        <article class="job-card" data-rating="4.7" data-budget="2000">
+                            <div class="job-image"><img class="job-image-src" src="../Assets/Images/e-commerce-website-doodle-icon-design-illustration-ecommerce-and-shopping-symbol-on-white-background-eps-10-file-vector.jpg" alt="UI/UX Image"/></div>
+                            <div class="job-details">
+                                <h3 class="job-title">E-commerce Website Redesign</h3>
+                                <p class="job-stats">
+                                    Due by: 5 April 2025<br>
+                                    Project Price: $2000 (30% upfront, 70% on completion)
+                                </p>
+                                <button class="hire-btn" aria-label="Hire website designer">Hire Now</button>
+                            </div>
+                        </article>
+                        <hr class="listing-divider">
+
+                        <article class="job-card" data-rating="4.4" data-budget="1200">
+                            <div class="job-image"><img class="job-image-src" src="../Assets/Images/brand-identity-line-icon-linear-style-sign-mobile-concept-web-design-badge-outline-vector-recognition-personality-symbol-345038010.webp" alt="UI/UX Image"/></div>
+                            <div class="job-details">
+                                <h3 class="job-title">Brand Identity Package</h3>
+                                <p class="job-stats">
+                                    Due by: 10 April 2025<br>
+                                    Project Price: $1200 (50% upfront, 50% on completion)
+                                </p>
+                                <button class="hire-btn" aria-label="Hire brand designer">Hire Now</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Filter ongoing work by status
+            const statusDropdown = document.querySelector('#work-status');
+            const workItems = document.querySelectorAll('.work-item');
+            statusDropdown.addEventListener('change', () => {
+                const selectedStatus = statusDropdown.value;
+                workItems.forEach(item => {
+                    const itemStatus = item.dataset.status;
+                    item.style.display = selectedStatus === 'all' || itemStatus === selectedStatus ? 'block' : 'none';
+                });
+            });
+
+            // Toggle filters modal
+            const filtersBtn = document.querySelector('.filters-button');
+            const filtersModal = document.querySelector('.filters-modal');
+            filtersBtn.addEventListener('click', () => {
+                filtersModal.hidden = !filtersModal.hidden;
+            });
+
+            // Basic search functionality
+            const searchInput = document.querySelector(".search-box");
+            const jobCards = document.querySelectorAll(".job-card");
+
+            searchInput.addEventListener("input", function () {
+                const searchText = searchInput.value.toLowerCase().trim();
+
+                jobCards.forEach((item) => {
+                    const jobTitle = item.querySelector(".job-title").innerText.toLowerCase();
+                    const jobDetails = item.querySelector(".job-stats").innerText.toLowerCase();
+
+                    if (jobTitle.includes(searchText) || jobDetails.includes(searchText)) {
+                        item.style.display = "flex"; // Show matched job
+                    } else {
+                        item.style.display = "none"; // Hide unmatched job
+                    }
+                });
+            });
+
+            // Message button placeholder
+            document.querySelectorAll('.message-btn').forEach(btn => {
+                btn.addEventListener('click', () => alert('Message functionality to be implemented!'));
+            });
+
+            // Update status placeholder
+            document.querySelectorAll('.update-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const newStatus = prompt('Enter new status (e.g., In Progress, Completed, etc.):');
+                    if (newStatus) {
+                        const workItem = btn.closest('.work-item');
+                        workItem.querySelector('.status-text').textContent = newStatus;
+                        workItem.dataset.status = newStatus.toLowerCase().replace(/\s+/g, '-');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkLancer - Messaging</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Akshar:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/messaging_interface.css">  
+</head>
+<body>
+  <header class="nav-header">
+    <nav class="nav-container">
+      <h1 class="logo">LinkLancer</h1>
+      <div class="nav-links">
+        <a href="homepage.html" class="nav-link">
+          <img src="../Assets/Images/homepage_org_img1.svg" alt="Home icon" class="nav-icon">
+          <span>Home</span>
+        </a>
+        <a href="workpage.html" class="nav-link-work">
+          <img src="../Assets/Images/workpage_org_img2.svg" alt="Work icon" class="nav-icon-work">
+          <span>Work</span>
+        </a>
+        <a href="../HTML/messaging_interface.html" class="nav-link nav-link-active">
+          <img src="../Assets/Images/workpage_org_img3.svg" alt="Chat icon" class="nav-icon-chat">
+          <span>Messages</span>
+        </a>
+      </div>
+      <a href="../HTML/detailssection.html"><img src="../Assets/Images/john_doe.png" alt="Profile" class="nav-profile"></a>
+    </nav>
+  </header>
+
+  <main class="chat-container">
+    <section class="messaging-sidebar">
+      <div class="messaging-header">
+        <h2 class="messaging-title">Messaging</h2>
+        <button class="search-button">Search in messages</button>
+        <hr class="divider">
+      </div>
+
+      <div class="conversation-list">
+        <article class="conversation-item">
+          <div class="user-avatar active"></div>
+          <div class="conversation-content">
+            <div class="conversation-header">
+              <h3 class="business-name">Business 1</h3>
+              <time class="message-time">23 Feb, 23:16</time>
+            </div>
+            <p class="message-preview">
+              business1:<br>These changes are to be made in the project scope...
+            </p>
+          </div>
+        </article>
+
+        <hr class="divider">
+
+        <article class="conversation-item">
+          <div class="user-avatar active"></div>
+          <div class="conversation-content">
+            <div class="conversation-header">
+              <h3 class="business-name">Business 2</h3>
+              <time class="message-time">23 Feb, 22:45</time>
+            </div>
+            <p class="message-preview">
+              business2:<br>Can you provide an update on the current progress?
+            </p>
+          </div>
+        </article>
+
+        <hr class="divider">
+
+        <article class="conversation-item">
+          <div class="user-avatar"></div>
+          <div class="conversation-content">
+            <div class="conversation-header">
+              <h3 class="business-name">Business 3</h3>
+              <time class="message-time">22 Feb, 15:30</time>
+            </div>
+            <p class="message-preview">
+              You:<br>I've completed the first phase of the project as requested...
+            </p>
+          </div>
+        </article>
+
+        <hr class="divider">
+
+        <article class="conversation-item">
+          <div class="user-avatar"></div>
+          <div class="conversation-content">
+            <div class="conversation-header">
+              <h3 class="business-name">Business 4</h3>
+              <time class="message-time">21 Feb, 09:12</time>
+            </div>
+            <p class="message-preview">
+              business4:<br>Thank you for the quick delivery. We'd like to discuss...
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="chat-area">
+      <header class="chat-header">
+        <div class="user-avatar active"></div>
+        <h2 class="chat-title">Business 1</h2>
+      </header>
+
+      <div class="messages-container" id="messagesContainer">
+        <article class="message received">
+          We need to complete this work as soon as possible. The deadline is approaching fast.
+        </article>
+        <article class="message received">
+          Can you confirm you'll be able to deliver by Friday?
+        </article>
+        <article class="message sent">
+          I understand the urgency. I've already completed 70% of the work and will ensure delivery by Thursday.
+        </article>
+        <article class="message sent">
+          Would you like me to send a progress update tomorrow as well?
+        </article>
+        <article class="message received">
+          That would be great. Please include any potential issues you might encounter.
+        </article>
+      </div>
+
+      <footer class="message-input-container">
+        <div class="input-wrapper">
+          <img src="../Assets/Images/attachments-attach.svg" alt="Attachment" class="input-icon">
+          <input type="text" placeholder="Send a message" class="message-input" id="messageInput">
+        </div>
+        <button class="send-button" id="sendButton">
+          <img src="../Assets/Images/5359363.png" alt="Send" class="send-icon">
+        </button>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sendButton = document.getElementById("sendButton");
+      const messageInput = document.getElementById("messageInput");
+      const messagesContainer = document.getElementById("messagesContainer");
+
+      sendButton.addEventListener("click", function() {
+        const messageText = messageInput.value.trim();
+
+        if (messageText !== "") {
+          // Create new message element
+          const newMessage = document.createElement("article");
+          newMessage.classList.add("message", "sent");
+          newMessage.textContent = messageText;
+
+          // Append the message to the chat container
+          messagesContainer.appendChild(newMessage);
+
+          // Scroll to the bottom
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+          // Clear input field
+          messageInput.value = "";
+        }
+      });
+
+      // Allow sending messages with Enter key
+      messageInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          sendButton.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
